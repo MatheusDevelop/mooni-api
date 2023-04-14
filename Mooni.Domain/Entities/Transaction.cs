@@ -14,7 +14,7 @@ namespace Mooni.Domain.Entities
         public Guid CategoryId { get; set; }
         public Amount Amount { get; private set; } = new();
         public DateTime Date { get; private set; }
-        public DateTime? OverdueDate { get; private set; } 
+        public DateTime OverdueDate { get; private set; } 
         public bool Paid { get; private set; }
         public string Description { get; private set; }
     }

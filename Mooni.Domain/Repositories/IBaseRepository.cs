@@ -13,5 +13,6 @@ namespace Mooni.Domain.Repositories
         Task Create(T entity);
         void Update(T entity,Guid id);
         Task<List<T>> ReadAll(Expression<Func<T,bool>> query);
+        Task Delete(Guid id);
     }
 }

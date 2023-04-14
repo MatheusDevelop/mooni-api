@@ -34,5 +34,11 @@ namespace Mooni.UI.Controllers
             List<ViewModel> models = _mapper.Map<List<ViewModel>>(entities);
             return StatusCode(200, models);
         }
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(Guid id)
+        {
+            await _repository.Delete(id);
+            return Ok();
+        }
     }
 }

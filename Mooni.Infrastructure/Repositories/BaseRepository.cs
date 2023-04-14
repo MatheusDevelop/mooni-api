@@ -28,6 +28,24 @@ namespace Mooni.Infrastructure.Repositories
             }
         }
 
+        public async Task Delete(Guid id)
+        {
+            try
+            {
+                var entity = await _context.Set<T>().FindAsync(id);
+                if (entity is not null)
+                {
+                    _context.Set<T>().Remove(entity);
+                    await _context.SaveChangesAsync();
+                }
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+
         public async Task<List<T>> ReadAll(Expression<Func<T, bool>> query)
         {
             try

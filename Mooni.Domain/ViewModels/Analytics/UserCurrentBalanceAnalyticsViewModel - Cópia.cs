@@ -9,8 +9,13 @@ namespace Mooni.Domain.ViewModels.Analytics
 {
     public class UserCurrentBalanceAnalyticsViewModel
     {
-        public double CurrentBalance { get; set; }
-        public ComparisionPercentage Comparision { get; set; }
+        public UserCurrentBalanceAnalyticsViewModel(string currentBalance, List<ChartDataViewModel<string, double>> chartData)
+        {
+            CurrentBalance = currentBalance;
+            ChartData = chartData;
+        }
+
+        public string CurrentBalance { get; set; }
         public List<ChartDataViewModel<string, double>> ChartData { get; set; }
     }
 }

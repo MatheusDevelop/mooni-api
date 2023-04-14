@@ -23,5 +23,12 @@ namespace Mooni.UI.Controllers
             var entities = await _context.Transactions.Include(e=> e.Category).OrderByDescending(e=> e.CreatedAt).ToListAsync();
             return Ok(_mapper.Map<List<TransactionViewModel>>(entities));
         }
+        [HttpGet("quicksearch")]
+        public async Task<ActionResult<List<TransactionViewModel>>> Quicksearch(string query)
+        {
+            var entities = await _context.Transactions.Include(e => e.Category).Where(e=> e.Name.ToLower().Contains(query.ToLower())).OrderByDescending(e => e.CreatedAt).ToListAsync();
+            return Ok(_mapper.Map<List<TransactionViewModel>>(entities));
+
+        }
     }
 }
