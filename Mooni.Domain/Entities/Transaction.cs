@@ -12,10 +12,10 @@ namespace Mooni.Domain.Entities
         public string? IconColor { get; set; }
         public Category Category { get; private set; }
         public Guid CategoryId { get; set; }
-        public Amount Amount { get; private set; } = new();
+        public Amount Amount { get; set; } = new();
         public DateTime Date { get; private set; }
         public DateTime OverdueDate { get; private set; } 
-        public bool Paid { get; private set; }
+        public bool Paid { get; set; }
         public string Description { get; private set; }
     }
     public enum TransactionType

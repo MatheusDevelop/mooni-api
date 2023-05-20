@@ -10,6 +10,7 @@ namespace Mooni.Domain.ViewModels.Transaction
     public class TransactionViewModel
     {
         public Guid Id { get; set; }
+        public bool Paid { get; set; }
         public string Name { get; set; }
         public int CategoryIconId { get; set; }
         public string CategoryColor { get; set; }

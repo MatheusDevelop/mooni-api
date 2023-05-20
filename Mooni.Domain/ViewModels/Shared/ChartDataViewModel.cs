@@ -16,5 +16,6 @@ namespace Mooni.Domain.ViewModels.Shared
 
         public X XAxis { get; set; }
         public Y YAxis { get; set; }
+        public List<string> Metadata { get; set; } = new();
     }
 }

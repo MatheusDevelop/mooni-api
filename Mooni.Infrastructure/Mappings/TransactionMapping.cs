@@ -18,7 +18,6 @@ namespace Mooni.Infrastructure.Mappings
                     .WithMany(e => e.Transactions)
                     .HasForeignKey(e => e.UserId)
                     .OnDelete(DeleteBehavior.Cascade);
-
             builder.HasOne(e => e.Category)
                    .WithMany()
                    .HasForeignKey(e => e.CategoryId)
