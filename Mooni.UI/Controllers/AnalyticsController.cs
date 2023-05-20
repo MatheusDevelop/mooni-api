@@ -60,10 +60,6 @@ namespace Mooni.UI.Controllers
                 var incomesSum = monthTransactions.Where(e => e.Type == Domain.Entities.TransactionType.Income).Sum(e => e.Amount.Value);
                 var expensesSum = monthTransactions.Where(e => e.Type == Domain.Entities.TransactionType.Expense).Sum(e => e.Amount.Value);
                 double monthBalance = incomesSum - expensesSum;
-                if (monthBalance == 1000)
-                {
-                    var x = "";
-                }
                 yearBalance += monthBalance;
                 ChartDataViewModel<string, double> data = new(month.ToString(), yearBalance);
                 data.Metadata.Add(incomesSum.ToString());
